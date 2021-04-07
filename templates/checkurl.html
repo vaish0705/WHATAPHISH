@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<title>Whataphish</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles-homepage1.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body id="main">
+	<header>
+		<nav id="header-nav" class="navbar navbar-default navbar-dark bg-primary">
+			<div class="container">
+				<div class="navbar-header">
+					<div class="navbar-brand">
+						<a href="{% url 'home' %}">
+							<h1><b>WHATAPHISH</b><br></h1>
+						</a>
+						<h3><i><b>You click, they trick!</b></i></h3>
+					</div>
+					<div id="mySidebar" class="sidebar">
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+						<a href="{% url 'home' %}">About Us</a>
+						<a href="{% url 'URL' %}">Check Url</a>
+						<a href="{% url 'signup' %}">Sign In</a>
+						<a href="{% url 'signup' %}">Sign Up</a>
+
+					</div>
+					<div class="visible-xs">
+						<button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+					</div>
+					<div class="hidden-xs">
+						<p class="contact1">whataphish@gmail.com</p>
+					</div>
+					<div class="hidden-xs">
+						<a class="contact2" href="tel:XXXXXXXXXX">
+							<span>XXXXXXXXXX</span></a>
+					</div>
+					<div class="hidden-xs">
+						<button type="button" class="btn pos1 login btn-info"><a href="signin.html">Sign In</a></button>
+					</div>
+					<div class="hidden-xs">
+						<button type="button" class="btn pos2 login btn-info" align="right"><a href="signin.html">Sign
+								Up</a></button>
+					</div>
+					<div class="hidden-xs">
+						<ul id="nav-list" class="nav navbar-nav navbar-right">
+							<li>
+								<a href="{% url 'home' %}">Home</a>
+							</li>
+							<li class="active">
+								<a href="{% url 'URL' %}">Check Url</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	{% load crispy_forms_tags %}
+	<div id="main-content" class="container">
+		<section class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<form method="POST">
+							{% csrf_token %}
+							{{ form|crispy }}
+							<button class="btn btn-outline-secondary gpsbtn" type="submit">Check</button>
+						</form>
+						<br>
+					</div>
+					<div class="container">
+						<div class="result">
+						
+							{% if messages %}
+							<ul class="messages">
+								{% for message in messages %}
+								<li {% if message.tags %} classes="{{ message.tags }}" {% endif %}>
+									<h4 style="color:#004d80; padding-top: 10px;"><b>{{ message }}</b></h4>
+								</li>
+								{% endfor %}
+							</ul>
+							{% endif %}
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-12 col-sm-12">
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+
+						<div class="container">
+							<h2><b>FAQs</b></h2>
+
+							<button type="button" class="btn btn-info short" data-toggle="collapse"
+								data-target="#demo"><b>What is Phishing?</b>
+							</button>
+							<div id="demo" class="collapse">
+								<b>To 'phish' for sensitive financial information, fraudsters send fake emails, create
+									bogus websites and make phone calls, pretending to be from a bank or credit card
+									company. All are designed to deceive consumers into divulging personal, financial,
+									or account information.</b>
+							</div>
+						</div>
+						<div class="container">
+							<button type="button" class="btn btn-info short " data-toggle="collapse"
+								data-target="#demo1"><b>What does phishing look like?</b></button>
+							<div id="demo1" class="collapse">
+								<b>The nature of phishing scams is constantly evolving. Currently, online/e-mail
+									phishing is best described by the following characteristics:
+									<ul>
+										<li>E-mails using company logos and familiar language reporting a problem and
+											asking you to update your account information urgently by return e-mail or
+											by filling out a website form.</li>
+										<li>E-mails with attachments asking you to install software which actually
+											allows fraudsters to record your computer key strokes (called Keystroke
+											Logging) and online activity.</li>
+										<li>E-mails that contain typographical or grammatical errors.</li>
+										<li>Windows that pop up over a legitimate company’s website asking you to enter
+											personal information.</li>
+										<li>Sense of urgency created by the message. Example: Your account will be
+											closed or temporarily suspended. You’ll be charged a fee if you don’t
+											respond.</li>
+										<li>The e-mail address states American Express, but the content has little to do
+											with American Express products.</li>
+									</ul>
+								</b>
+
+							</div>
+						</div>
+						<div class="container">
+							<button type="button" class="btn btn-info short coll-bottom2" data-toggle="collapse"
+								data-target="#demo2"><b>What should I do if think I've been targeted by
+									phishing</b></button>
+							<div id="demo2" class="collapse coll-bottom">
+								<b>If you receive an e-mail relating to American Express that you believe could be
+									fraudulent, immediately forward it to spoof@americanexpress.ca. Please do not
+									include your account number in the e-mail. If you feel your American Express account
+									information has been compromised, please contact American Express immediately by
+									calling the number on the back of your Card.Please do not click on any links in
+									American Express e-mails that look suspicious because simply clicking on the link
+									may install key logging software or a virus on your computer. It is important to
+									practice safe computing by installing virus scanning software, firewalls, anti-spy
+									ware software and other similar safeguards.</b>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+	<div class="footer">
+		<p>Thanks for visiting!</p>
+	</div>
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

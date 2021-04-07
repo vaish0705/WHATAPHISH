@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<title>Whataphish</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles-homepage1.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body id="main">
+	<!--navbar-->
+	<header>
+		<nav id="header-nav" class="navbar navbar-default navbar-dark bg-primary">
+			<div class="container">
+				<div class="navbar-header">
+					<div class="navbar-brand">
+						<a href="{% url 'home' %}">
+							<h1><b>WHATAPHISH</b><br></h1>
+						</a>
+						<h3><i><b>You click, they trick!</b> </i> </h3>
+					</div>
+					<div id="mySidebar" class="sidebar">
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+						<a href="{% url 'home' %}">Home</a>
+						<a href="{% url 'URL' %}">Check Url</a>
+						<a href="{% url 'signup' %}">Sign In</a>
+						<a href="{% url 'signup' %}">Sign Up</a>
+
+					</div>
+					<div class="visible-xs">
+						<button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+					</div>
+					<div class="hidden-xs">
+						<p class="contact1">whataphish@gmail.com</p>
+					</div>
+					<div class="hidden-xs">
+						<a class="contact2" href="tel:XXXXXXXXXX">
+							<span>XXXXXXXXXX</span></a>
+					</div>
+					<div class="hidden-xs">
+						<button type="button" class="btn pos1 login btn-info"><a href="{% url 'signup' %}">Sign
+								In</a></button>
+					</div>
+					<div class="hidden-xs">
+						<button type="button" class="btn pos2 login btn-info" align="right"><a
+								href="{% url 'signup' %}">Sign Up</a></button>
+					</div>
+					<div class="hidden-xs">
+						<ul id="nav-list" class="nav navbar-nav navbar-right">
+							<li>
+								<a href="{% url 'home' %}">Home</a>
+							</li>
+							<li>
+								<a href="{% url 'URL' %}">Check Url</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="col-md-3 col-sm-3"></div>
+	<div align="center" class="mains col-md-6 col-sm-6">
+		<h4 class="signin">Sign Up</h4>
+		<h4 align="left" class="storehead">Username</h4>
+		<input type="text" class="form-control form-control-sm" placeholder="Enter Username" id="username">
+		<h4 align="left" class="storehead">Password</h4>
+		<input type="password" class="form-control form-control-sm" placeholder="Enter Password" id="pwd">
+		<button class="button3 " type="button"><span> <a href="{% url 'home' %}">Sign Up </a></span></button>
+		<h5>Already a user?</h5>
+		<button class="button4 " type="button"><span><a href="{% url 'home' %}">Login </a></span></button>
+	</div>
+	<div class="col-md-3 col-sm-3"></div>
+	<div class="footer">
+		<p>Thanks for visiting!</p>
+	</div>
+	<script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+
+</body>
+
+</html>
