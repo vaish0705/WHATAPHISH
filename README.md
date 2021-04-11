@@ -1,7 +1,7 @@
 # WHATAPHISH
 
 # Project Title
-WHATAPHISH(https://whataphis.herokuapp.com/)-Phishing url detection website
+WHATAPHISH(https://whataphis.herokuapp.com/) - Phishing url detection website
 
 ## PROJECT DESCRIPTION
 Phishing is a form of fraud in which the attacker tries to learn sensitive information such as login credentials or account information by sending as a reputable entity or person in email or other communication channels.
